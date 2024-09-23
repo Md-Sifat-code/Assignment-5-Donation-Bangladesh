@@ -25,13 +25,15 @@ function chnages(id1,id2){
 // btn-1
 // change-taka
 // input-1
-function donation(id1,id2,id3){
+function donation(id1,id2,id3,id4,id5){
 
     const main_taka = document.getElementById(id1).innerText;
     const x = parseFloat(main_taka);
     const chnage_taka = document.getElementById(id3).innerText;
     const z = parseFloat(chnage_taka);
     const input_value = document.getElementById(id2).value;
+    const taka_add_koro = document.getElementById(id4);
+    const place = document.getElementById(id5).innerText;
     if( isNaN(input_value)){
         alert("You can not give negative or any letters as Dontaion");
     }else{
@@ -41,10 +43,29 @@ function donation(id1,id2,id3){
         
         document.getElementById(id1).innerText = sum2;
         document.getElementById(id3).innerText = sum1;
+        // aikhane taka add er part
+        const currentDate = new Date();
+        const formattedTime = currentDate.toString();
+        taka_add_koro.innerHTML += `
+    <div class="border border-stone-200 rounded-[18px] px-4 mt-4 mb-4">
+        <p class="text-lg text-black font-bold">You have successfully donated ${y} Taka. ${place}</p>
+        <p class="text-xl font-bold text-stone-300">Donation made at: ${formattedTime}</p>
+    </div>
+`;
+      // end
         document.getElementById('my_modal_1').showModal();
     }
 }
-// 
+// History btn er keramoti
+function history(id1,id2){
+    const x = document.getElementById(id1);
+    const y = document.getElementById(id2);
+    x.classList.add('hidden');
+    y.classList.remove('hidden');
+
+
+
+}
 
 
 
