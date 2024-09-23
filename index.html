@@ -29,13 +29,14 @@
                 </div>
                 <div class="navbar-end mt-6 mb-6 flex flex-row gap-2">
                     <img src="./assets/coin.png" alt="">
-                    <h1 class="font-medium text-[12px] sm:text-xl"><span>5500</span>BDT</h1>
+                    <h1 class="font-medium text-[12px] sm:text-xl"><span id="main-taka">5500</span>BDT</h1>
                 </div>
             </div>
             <div class="flex flex-row gap-4 mt-5 mb-6">
-                <button
+                <button onclick="chnages('btn-history','btn-donation')" id="btn-donation"
                     class="btn btn-primary bg-[#B4F461] px-5 text-black font-bold border-none hover:bg-green-200">Donation</button>
-                <button class="btn btn-outline border-[#B4F461] px-5 font-medium text-stone-500">History</button>
+                <button onclick="chnages('btn-donation','btn-history')" id="btn-history"
+                    class="btn btn-outline border-[#B4F461] px-5 font-medium text-stone-500">History</button>
             </div>
         </div>
     </section>
@@ -53,16 +54,17 @@
     <!-- main parts of the website -->
     <section>
         <div class="container mx-auto">
-            <div class="hero bg-base-200 flex flex-col justify-center items-center w-fit px-4 sm:px-0 rounded-[42px] mt-12 gap-6">
+            <div
+                class="hero bg-base-200 flex flex-col justify-center items-center w-fit px-4 sm:px-0 rounded-[42px] mt-12 gap-6">
                 <!-- part -1 -->
                 <div class="flex flex-col md:flex-row justify-center gap-8  py-8">
                     <div class="card bg-base-100 w-auto md:w-1/2 max-w-sm shrink-0 shadow-2xl h-auto ">
                         <img class="h-full" src="./assets/noakhali.png" alt="">
                     </div>
                     <div class="flex flex-col justify-start items-baseline md:w-1/2">
-                        <div class="flex flex-row gap-2 justify-start items-center">
+                        <div class="flex flex-row gap-2 justify-start items-center border p-2 bg-stone-200 rounded-xl">
                             <img src="./assets/coin.png" alt="">
-                            <h1><span>0</span>BDT</h1>
+                            <h1><span id="change-taka">1024</span>BDT</h1>
                         </div>
                         <h1 class="text-xl font-bold mt-2">Donate for Flood at Noakhali, Bangladesh</h1>
                         <p class="py-6 text-start">
@@ -71,10 +73,25 @@
                             contribution, big or small, makes difference. Please join us in supporting the relief
                             efforts and making a positive impact on the lives of those in need.
                         </p>
-                        <input type="number" placeholder="Write Donation Amount"
+                        <input id="input-1" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered border-stone-300  w-full " />
-                        <button
-                            class="btn btn-primary bg-[#B4F461] px-5 text-black font-bold border-none hover:bg-green-200 w-full mt-5">Donation</button>
+                        <button onclick="donation('main-taka','input-1','change-taka')" id="btn-1"
+                            class="btn btn-primary bg-[#B4F461] px-5 text-black font-bold border-none hover:bg-green-200 w-full mt-5">Donate
+                            Now</button>
+                        <dialog id="my_modal_1" class="modal">
+                            <div class="modal-box flex flex-col justify-start items-center">
+                                <h3 class="text-xl md:text-2xl font-bold text-center">Congrates!</h3>
+                                <img class="mt-4" src="./assets/coin.png" alt="">
+                                <p class="py-4">You have Donated For Humankind</p>
+                                <h1 class="text-xl md:text-2xl font-bold">Successfully!</h1>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
 
                 </div>
@@ -84,9 +101,9 @@
                         <img class="h-full" src="./assets/feni.png" alt="">
                     </div>
                     <div class="flex flex-col justify-start items-baseline md:w-1/2">
-                        <div class="flex flex-row gap-2 justify-start items-center">
+                        <div class="flex flex-row gap-2 justify-start items-center border p-2 bg-stone-200 rounded-xl ">
                             <img src="./assets/coin.png" alt="">
-                            <h1><span>0</span>BDT</h1>
+                            <h1><span id="change-taka-1">2500</span>BDT</h1>
                         </div>
                         <h1 class="text-xl font-bold mt-2">Donate for Flood at Noakhali, Bangladesh</h1>
                         <p class="py-6 text-start">
@@ -95,10 +112,25 @@
                             contribution, big or small, makes difference. Please join us in supporting the relief
                             efforts and making a positive impact on the lives of those in need.
                         </p>
-                        <input type="number" placeholder="Write Donation Amount"
+                        <input id="input-2" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered border-stone-300  w-full " />
-                        <button
-                            class="btn btn-primary bg-[#B4F461] px-5 text-black font-bold border-none hover:bg-green-200 w-full mt-5">Donation</button>
+                        <button id="btn-2" onclick="donation('main-taka','input-2','change-taka-1')"
+                            class="btn btn-primary bg-[#B4F461] px-5 text-black font-bold border-none hover:bg-green-200 w-full mt-5">Donate
+                            Now</button>
+                        <dialog id="my_modal_1" class="modal">
+                            <div class="modal-box flex flex-col justify-start items-center">
+                                <h3 class="text-xl md:text-2xl font-bold text-center">Congrates!</h3>
+                                <img class="mt-4" src="./assets/coin.png" alt="">
+                                <p class="py-4">You have Donated For Humankind</p>
+                                <h1 class="text-xl md:text-2xl font-bold">Successfully!</h1>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
 
                 </div>
@@ -108,9 +140,9 @@
                         <img class="h-full" src="./assets/quota-protest.png" alt="">
                     </div>
                     <div class="flex flex-col justify-start items-baseline md:w-1/2">
-                        <div class="flex flex-row gap-2 justify-start items-center">
+                        <div class="flex flex-row gap-2 justify-start items-center border p-2 bg-stone-200 rounded-xl">
                             <img src="./assets/coin.png" alt="">
-                            <h1><span>0</span>BDT</h1>
+                            <h1><span id="change-taka-2">1560</span>BDT</h1>
                         </div>
                         <h1 class="text-xl font-bold mt-2">Donate for Flood at Noakhali, Bangladesh</h1>
                         <p class="py-6 text-start">
@@ -119,10 +151,25 @@
                             contribution, big or small, makes difference. Please join us in supporting the relief
                             efforts and making a positive impact on the lives of those in need.
                         </p>
-                        <input type="number" placeholder="Write Donation Amount"
+                        <input id="input-3" type="text" placeholder="Write Donation Amount"
                             class="input input-bordered border-stone-300  w-full " />
-                        <button
-                            class="btn btn-primary bg-[#B4F461] px-5 text-black font-bold border-none hover:bg-green-200 w-full mt-5">Donation</button>
+                        <button id="btn-3" onclick="donation('main-taka','input-3','change-taka-2')"
+                            class="btn btn-primary bg-[#B4F461] px-5 text-black font-bold border-none hover:bg-green-200 w-full mt-5">Donate
+                            Now</button>
+                        <dialog id="my_modal_1" class="modal">
+                            <div class="modal-box flex flex-col justify-start items-center">
+                                <h3 class="text-xl md:text-2xl font-bold text-center">Congrates!</h3>
+                                <img class="mt-4" src="./assets/coin.png" alt="">
+                                <p class="py-4">You have Donated For Humankind</p>
+                                <h1 class="text-xl md:text-2xl font-bold">Successfully!</h1>
+                                <div class="modal-action">
+                                    <form method="dialog">
+                                        <!-- if there is a button in form, it will close the modal -->
+                                        <button class="btn">Close confirmation</button>
+                                    </form>
+                                </div>
+                            </div>
+                        </dialog>
                     </div>
 
                 </div>
@@ -131,11 +178,11 @@
         </div>
     </section>
     <!-- History section -->
-     <section>
+    <section id="history">
         <div class="container mx-auto hidden flex-col gap-6 mt-12">
 
         </div>
-     </section>
+    </section>
 
 
     <!-- java script adding -->
